@@ -233,8 +233,21 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'APZelos/blamer.nvim',-- GitLens to show who coded the lines
   {
-    'petertriho/nvim-scrollbar',
+    'petertriho/nvim-scrollbar', -- scrollbar that also show errors and warning
+    opts = {},
+  },
+  {
+    'windwp/nvim-ts-autotag', -- autoclose and autorename
+    opts = {
+      enable_close = true, -- Auto close tags
+      enable_rename = true, -- Auto rename pairs of tags
+      enable_close_on_slash = false -- Auto close on trailing </},
+    },
+  },
+  {
+    'windwp/nvim-autopairs',
     opts = {},
   },
   -- NOTE: Plugins can also be added by using a table,
